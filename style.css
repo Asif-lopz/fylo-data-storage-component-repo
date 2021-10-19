@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Handlee&display=swap');
 
 body {
     margin: 0;
@@ -70,41 +71,69 @@ body {
 }
 .box1 p {
     margin-left: 40px;
+    font-family: 'Handlee', cursive;
 }
 .box1 .para {
     margin: 30px 0 10px 40px;
     font-size: 12px;
 }
-.scrollbar {
-    position: relative;
-    display: block;
+.progressbar{
+    margin-left: 42px;
     width: 300px;
-    font-size: 16px;
-    line-height: 14px;
-    background-color: hsl(229, 57%, 11%);
-    border-radius: 30px;
-    margin-left: 40px;
-}
-.scrollbar span {
-    position: relative;
-    display: inline-block;
-    vertical-align: middle;
     height: 10px;
     border-radius: 10px;
-    overflow: hidden;
-    background-color: white;
-    background-size: 100%;
-    background-image: linear-gradient(to right, hsl(6, 100%, 80%), hsl(335, 100%, 65%));
-}
+    padding: 2px;
+    background: hsl(229, 57%, 11%);
+    display:flex;
+  }
+  .progressbar::before, .progressbar::after{
+    content: '';
+    border-radius: 10px;
+  }
+  .progressbar::before{
+    --percentage: calc(var(--value) / 1000 * 100%);
+    width: var(--percentage);
+    height: 100%;
+    background: linear-gradient(to right, hsl(6, 100%, 80%), hsl(335, 100%, 65%));
+  }
+  .progressbar::after{
+    height: calc(100% - 4px);
+    aspect-ratio: 1;
+    transform: translateX(calc(-100% - 2px));
+    margin-top: 2px;
+    background:white;
+  }
 strong, .box2 p{
     font-family: 'Raleway', sans-serif;
     color: hsl(243, 100%, 93%);
     font-size: 13px;
 }
-
 .text {
     display: flex;
     justify-content: space-between;
     margin: 0 0 0 0;
-    padding-bottom: 10px;
 }
+.big-not {
+    width: 120px;
+    height: 50px;
+    background-color: white;
+    font-size: 13px;
+    text-align: center;
+    border-radius: 10px;
+    transform: translate(-120px, -70px);
+}
+.big-not p {
+    margin: 0 0 0 0;
+    padding-top: 8%;
+}
+.big-not strong {
+    color: black;
+    font-size: 24px;
+}
+.trayagle {
+    width: 0;
+    height: 0;
+    border-top: 50px solid rgb(255, 255, 255);
+    border-left: 50px solid transparent;
+    transform: translate(580%, -250%);
+  }
