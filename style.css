@@ -138,6 +138,9 @@ strong, .box2 p{
     transform: translate(580%, -250%);
   }
 
+.attribution { font-size: 11px; text-align: center; margin-top: 450px; color: rgb(253, 253, 253); }
+.attribution a { color: hsl(228, 45%, 44%); }
+
 
 /* Mobile  view editing */
 
@@ -202,5 +205,8 @@ strong, .box2 p{
     }
     .big-not {
         transform: translateX(70%);
+    }
+    .attribution {
+        margin-top: 70px;
     }
 }
